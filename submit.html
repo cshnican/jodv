@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=greek" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Recipe</title>
+  <style>
+    body {
+      font-family: Roboto, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      color: #2175d8;
+      text-align: center;
+    }
+    .textbox {
+      width: 90%;
+      padding: 10px;
+      margin: 10px auto;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      display: block;
+    }
+    .submit-btn {
+      background-color: #2175d8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .submit-btn:hover {
+      background-color: #165a9b;
+    }
+
+    /* Back to Index Button */
+    .back-btn {
+      background-color: #2175d8;
+      color: white;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 10px 20px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border-radius: 5px;
+      transition: color 0.3s ease;
+    }
+    .back-btn:hover {
+      color: #165a9b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="katalogos.html">
+        <button class="back-btn">Κατάλογος / Menu</button>
+    </a>
+    <h2>Στείλτε την συνταγή σας<br>Submit your recipe</h2>
+    <form action="submit.php" method="POST">
+      <input type="text" name="author" class="textbox" placeholder="Ονόματα τους συγγραφείς / Names of the authors" required><br>  
+      <input type="text" name="drink" class="textbox" placeholder="Όνομα του ποτού / Name of the drink" required><br>
+      <input type="text" name="recipe" class="textbox" placeholder="Συνταγή / Recipe" required><br>
+      <button type="submit" class="submit-btn">Τέλος / Done</button>
+    </form>
+  </div>
+
+</body>
+</html>
