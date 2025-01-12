@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Greek:wght@400;700&display=swap&subset=greek" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal of Double Vision</title>
+  <style>
+    body {
+      font-family: 'Noto Serif Greek', serif;
+      background: linear-gradient(135deg, #f5f5f0, #e0e4cc);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 80%;
+      max-width: 900px;
+      margin: 20px;
+      padding: 40px;
+      background-color: #fdfcf5;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e4cc;
+      transition: transform 0.3s ease;
+    }
+
+    .page:hover {
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header {
+      font-size: 70px;
+      color: #0a5ca4;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .journal-title {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #0a5ca4;
+      letter-spacing: 3px;
+    }
+
+    .group {
+      font-size: 24px;
+      color: #0a5ca4;
+      text-align: left;
+      margin-top: 2em;
+    }
+
+    .entry {
+      margin-top: 1.5em;
+      font-size: 20px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .entry .explanation {
+      margin-left: 1.5em;
+      font-size: 16px;
+      color: #5a5a5a;
+      transition: color 0.3s ease;
+    }
+
+    .entry:hover .explanation {
+      color: #0a5ca4;
+    }
+
+    .svg-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .svg-container svg {
+      width: 100px;
+      height: 100px;
+      fill: #0a5ca4;
+      transition: fill 0.3s ease, transform 0.3s ease;
+    }
+
+    .svg-container:hover svg {
+      fill: #f0c419;
+      transform: rotate(360deg);
+    }
+
+    .language-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background-color: #0a5ca4;
+      color: white;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 50px;
+      transition: background-color 0.3s ease;
+    }
+
+    .language-button:hover {
+      background-color: #f0c419;
+    }
+
+    #submit-btn {
+      background-color: #0a5ca4;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 80px;
+      padding: 10px 15px;
+      transition: color 0.3s ease;
+    }
+
+    #submit-btn:hover {
+      color: #0a5ca4;
+    }
+
+    .acknowledgment {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        font-size: 40px;
+      }
+      .page {
+        padding: 20px;
+      }
+      .group {
+        font-size: 18px;
+      }
+      .explanation {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <button class="language-button" id="lang-button" onclick="toggleLanguage()">EN</button>
+  <a href="submit.html">
+    <button id="submit-btn">Submit</button>
+  </a>
+   <div class="svg-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 100" width="225" height="150">
+      <!-- Left glass -->
+      <polygon points="30,30 70,30 50,60" fill="#2175d8" opacity="0.7" stroke="black" stroke-width="2"/>
+      <rect x="45" y="60" width="10" height="20" fill="grey" opacity="0.7"/>
+      <rect x="35" y="80" width="30" height="5" fill="grey" opacity="0.7"/>
+  
+      <!-- Right glass (slightly overlapping) -->
+      <polygon points="50,30 90,30 70,60" fill="#2175d8" opacity="0.7" stroke="black" stroke-width="2"/>
+      <rect x="65" y="60" width="10" height="20" fill="grey" opacity="0.7"/>
+      <rect x="55" y="80" width="30" height="5" fill="grey" opacity="0.7"/>
+  
+    </svg>
+  </div>
+
+  <div class="header">
+    <span class="journal-title">Journal of Double Vision</span>
+  </div>
+
+  <div class="group">
+    <div class="entry">
+      Kanwisher & Duncan (2005)
+      <div class="explanation">Τεκίλα, μπλέ κουρασάο, χυμός λάιμ</div>
+    </div>
+    <div class="entry">
+      Fang (2023)
+      <div class="explanation">Χυμός πορτοκάλι, γρεναδίνη, τεκίλα</div>
+    </div>
+    <div class="entry">
+      Martínez, Chen, Zoroufi, An (2023)
+      <div class="explanation">Λίκερ σαράντα τρία, γάλα</div>
+    </div>
+    <div class="entry">
+      Chomik-Morales, Zoroufi, Chen (2024)
+      <div class="explanation">Μαστίχα, σπράιτ, λίκερ βιολέτα</div>
+    </div>
+    <div class="entry">
+      Martínez (2023)
+      <div class="explanation">Μερικό τυχαίο κρασί, κόκα-κόλα</div>
+    </div>
+    <div class="entry">
+      Pramod (2023)
+      <div class="explanation">Ρούμι <γέρος μοναχός>, κόκα-κόλα</div>
+    </div>
+    <div class="entry">
+      de la Torre & Zoroufi (2024)
+      <div class="explanation">λάιμ, γρεναδίνη, μαστίχα, ασπράδι αυγού, πίσκο</div>
+    </div>
+    <div class="entry">
+      de la Torre & Zoroufi (2025)
+      <div class="explanation">Κύριος μαύρος, τζιν, λίκερ σαράντα τρία, γρεναδίνη</div>
+    </div>
+    <div class="entry">
+      Pramod & Zoroufi (2023)
+      <div class="explanation">Παγωτό βανίλια, τεκίλα, μπλέ κουρασάο ή λίκερ τρίπλ σακ</div>
+    </div>
+    <div class="entry">
+      She, Zoroufi, Chen (2023)
+      <div class="explanation">Σότζου, ποτό <καλπίκο>, σπράιτ</div>
+    </div>
+    <div class="entry">
+      Bernstein (2024)
+      <div class="explanation">Τσίπουρο Ηδωνικό, ποτό <καλπίκο></div>
+    </div>
+    <div class="entry">
+      Chen & Zoroufi (2024)
+      <div class="explanation">Τσίπουρο Ηδωνικό ή Κατσάρου, σπράιτ</div>
+    </div>
+    <div class="entry">
+      Chen (2024)
+      <div class="explanation">Λίκερ μαστίχα, χυμός λεμόνι, σπράιτ</div>
+    </div>
+    <div class="entry">
+      Choksi & Gothoskar (2024)
+      <div class="explanation">Σκίτλς, βότκα, σόδα</div>
+    </div>
+    <div class="entry">
+      Pramod, Chen, Hutchinson, Woo, Fang, Zoroufi (2024)
+      <div class="explanation">Μελάσα ροδιού, λίκερ <γερός μοναχός>, σπράιτ, κρασί ροδιού</div>
+    </div>
+    <div class="entry">
+      Rubin & Kanwisher (2024)
+      <div class="explanation">Βότκα, λίκερ πορτοκάλι, χύμος ροδιού ή μελάσα ροδιού, χυμός λάιμ</div>
+    </div>
+    <div class="entry">
+      Zoroufi & Pramod (2024)
+      <div class="explanation">Παγωτό μάνγκο, χρυσή τεκίλα, μπλέ κουρασάο ή λίκερ τρίπλ σακ</div>
+    </div>
+    <div class="entry">
+      Zoroufi & de la Torre (2025)
+      <div class="explanation">λίκερ σαράντα τρία, η αγαπημένη σου σοκολάτα</div>
+    </div>
+    <div class="entry">
+      Zoroufi, de la Torre, She, Chen (2025)
+      <div class="explanation">Φραπέ (νερό, καφές), γάλα, Σότζου, Κύριος μαύρος, μαστίχα, λίκερ σαράντα τρία</div>
+    </div>
+  </div>
+
+  <div class="header">
+    <span class="journal-title">Journal of Double Vision</span>
+  </div>
+
+  <div class="acknowledgment">
+    Powered by ChatGPT
+  </div>
+</div>
+
+<script>
+  function toggleLanguage() {
+    const button = document.getElementById('lang-button');
+    if (button.textContent === 'EN') {
+      button.textContent = 'GR';
+      button.style.backgroundColor = '#0a5ca4';
+    } else {
+      button.textContent = 'EN';
+      button.style.backgroundColor = '#f0c419';
+    }
+  }
+</script>
+
+</body>
+</html>
