@@ -186,7 +186,7 @@
 <body>
 
 <div class="page">
-  <button class="language-button" id="lang-button" onclick="toggleLanguage()">EN</button>
+  <button class="language-button" id="lang-button" onclick="toggleLanguage_fake()">EN</button>
   <a href="about:blank">
     <button id="submit-btn">Submit</button>
   </a>
@@ -218,17 +218,16 @@
     <span class="journal-title">Journal of Double Vision</span>
   </div>
 
-  <div class="acknowledgment">
+  <div class="acknowledgment" onclick="toggleLanguage()">
     Powered by ChatGPT
   </div>
 </div>
 
-<!-- Secret Trigger and Translate Button -->
-<div class="secret-trigger"></div>
-<button id="translate-button" onclick="alert('Translation feature coming soon!')">Translate</button>
 
 <script>
-  function toggleLanguage() {
+  let currentLanguage = 'gr'; // Default language is Greek
+
+  function toggleLanguage_fake() {
     const button = document.getElementById('lang-button');
     if (button.textContent === 'EN') {
       button.textContent = 'GR';
@@ -239,10 +238,18 @@
     }
   }
 
-  // Function to load entries from the external HTML file
-  async function loadEntries() {
+  // Function to load entries
+  function toggleLanguage() {
+    const acknowledgment = document.querySelector('.acknowledgment');
+    currentLanguage = currentLanguage === 'gr' ? 'en' : 'gr';
+    loadEntries(currentLanguage);
+  }
+
+  // Function to load entries
+  async function loadEntries(language) {
+    const file = language === 'en' ? 'entries-en.html' : 'entries.html';
     try {
-      const response = await fetch('entries.html');
+      const response = await fetch(file);
       if (response.ok) {
         const entriesHtml = await response.text();
         document.getElementById('entries-container').innerHTML = entriesHtml;
