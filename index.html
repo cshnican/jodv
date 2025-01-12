@@ -210,6 +210,9 @@
     <span class="journal-title">Journal of Double Vision</span>
   </div>
 
+  <div id="entries-container">
+    Loading entries...
+  </div>
   
   <div class="header">
     <span class="journal-title">Journal of Double Vision</span>
@@ -237,25 +240,6 @@
   }
 
 
-  // Function to load entries from the external HTML file
-  async function loadEntries() {
-    try {
-      const response = await fetch('entries.html');
-      if (response.ok) {
-        const entriesHtml = await response.text();
-        document.getElementById('entries-container').innerHTML = entriesHtml;
-      } else {
-        console.error('Failed to load entries:', response.status);
-        document.getElementById('entries-container').textContent = 'Failed to load entries.';
-      }
-    } catch (error) {
-      console.error('Error loading entries:', error);
-      document.getElementById('entries-container').textContent = 'Error loading entries.';
-    }
-  }
-
-    // Load entries when the page loads
-    document.addEventListener('DOMContentLoaded', loadEntries);
 </script>
 
 </body>
