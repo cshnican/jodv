@@ -138,6 +138,35 @@
       color: #888;
     }
 
+    /* Hidden Translate Button */
+    #translate-button {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0a5ca4;
+      color: white;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    /* Invisible Trigger */
+    .secret-trigger {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+    }
+
+    .secret-trigger:hover + #translate-button {
+      display: block;
+    }
+
     @media (max-width: 600px) {
       .header {
         font-size: 40px;
@@ -158,22 +187,13 @@
 
 <div class="page">
   <button class="language-button" id="lang-button" onclick="toggleLanguage()">EN</button>
-  <!--<a href="submit.html">-->
   <a href="about:blank">
     <button id="submit-btn">Submit</button>
   </a>
-   <div class="svg-container">
+
+  <div class="svg-container">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 100" width="225" height="150">
-      <!-- Left glass -->
-      <polygon points="30,30 70,30 50,60" fill="#2175d8" opacity="0.7" stroke="black" stroke-width="2"/>
-      <rect x="45" y="60" width="10" height="20" fill="grey" opacity="0.7"/>
-      <rect x="35" y="80" width="30" height="5" fill="grey" opacity="0.7"/>
-  
-      <!-- Right glass (slightly overlapping) -->
-      <polygon points="50,30 90,30 70,60" fill="#2175d8" opacity="0.7" stroke="black" stroke-width="2"/>
-      <rect x="65" y="60" width="10" height="20" fill="grey" opacity="0.7"/>
-      <rect x="55" y="80" width="30" height="5" fill="grey" opacity="0.7"/>
-  
+      <!-- SVG Content -->
     </svg>
   </div>
 
@@ -268,6 +288,10 @@
     Powered by ChatGPT
   </div>
 </div>
+
+<!-- Secret Trigger and Translate Button -->
+<div class="secret-trigger"></div>
+<button id="translate-button" onclick="alert('Translation feature coming soon!')">Translate</button>
 
 <script>
   function toggleLanguage() {
